@@ -51,7 +51,7 @@ export default function UserList() {
                 </Th>
                 <Th>Usuário</Th>
                 <Th>Data de cadastro</Th>
-                <Th></Th>
+                <Th width="6"></Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -68,7 +68,7 @@ export default function UserList() {
                   </Box>
                 </Td>
                 <Td>19 de Abril, 2021</Td>
-                <Td px="6">
+                <Td>
                   <Button
                     as="a"
                     size="sm"
