@@ -4,7 +4,6 @@ import {
   Box,
   Text,
   theme,
-  ThemeProvider
 } from "@chakra-ui/react";
 import { ApexOptions } from "apexcharts";
 import dynamic from "next/dynamic";
