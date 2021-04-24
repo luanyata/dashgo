@@ -11,7 +11,6 @@ export function Sidebar() {
     lg: false
   })
 
-
   if (isDrawerSidebar) {
     return (
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
@@ -28,8 +27,6 @@ export function Sidebar() {
       </Drawer>
     )
   }
-
-
 
   return (
     <Box as="aside" w="64" mr="8">
