@@ -1,5 +1,5 @@
 <h1 align="center">
-	 dashgo
+	<span style="font-size:50px"> dashgo<span style="color:#D53F8C; font-size:50px">.</span></span>
 </h1>
 
 <p align="center">
