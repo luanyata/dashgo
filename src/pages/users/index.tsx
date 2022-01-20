@@ -28,10 +28,9 @@ export default function UserList() {
     const response = await fetch('http://localhost:3000/api/users')
     const data = response.json()
 
-
-
     return data;
   })
+
 
   const isWideVersion = useBreakpointValue({
     base: false,
@@ -50,7 +49,6 @@ export default function UserList() {
             <Heading size="lg" fontWeight="normal">
               Usuários
             </Heading>
-
             <Link href="/users/create" passHref>
               <Button
                 as="a"

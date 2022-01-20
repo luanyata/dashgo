@@ -1,35 +1,36 @@
 {
   "name": "dashgo",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/core": "^0.8.0",
-    "@chakra-ui/react": "^1.5.1",
-    "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.3.0",
-    "@hookform/resolvers": "^2.4.0",
-    "apexcharts": "^3.26.1",
-    "framer-motion": "^4.1.4",
-    "next": "10.1.3",
+    "@chakra-ui/react": "^1.7.4",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@hookform/resolvers": "^2.8.8",
+    "apexcharts": "^3.33.0",
+    "framer-motion": "^5",
+    "next": "12.0.8",
     "react": "17.0.2",
     "react-apexcharts": "^1.3.9",
     "react-dom": "17.0.2",
-    "react-hook-form": "^7.3.0",
-    "react-icons": "^4.2.0",
+    "react-hook-form": "^7.24.2",
+    "react-icons": "^4.3.1",
     "react-query": "^3.34.8",
-    "yup": "^0.32.9"
+    "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@types/node": "^14.14.41",
-    "@types/react": "^17.0.3",
-    "cz-emoji": "^1.3.1",
+    "@types/node": "^17.0.10",
+    "@types/react": "^17.0.38",
+    "cz-emoji": "1.3.1",
+    "eslint": "8.7.0",
+    "eslint-config-next": "12.0.8",
     "miragejs": "^0.1.43",
-    "typescript": "^4.2.4"
+    "typescript": "^4.5.4"
   },
   "config": {
     "commitizen": {

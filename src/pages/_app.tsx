@@ -1,17 +1,17 @@
 import { ChakraProvider } from "@chakra-ui/react"
 import { AppProps } from "next/app"
 import { QueryClient, QueryClientProvider } from "react-query"
-import { SidebarDrawerProvider } from "../hooks/SidebarDraweContext"
+import { SidebarDrawerProvider } from "../hooks/SidebarDrawerContext"
 import { makeServer } from "../services/mirage"
 import { theme } from "../styles/theme"
+
+const client = new QueryClient()
 
 function MyApp({ Component, pageProps }: AppProps) {
 
   if (process.env.NODE_ENV === "development") {
     makeServer()
   }
-
-  const client = new QueryClient()
 
   return (
     <QueryClientProvider client={client}>
