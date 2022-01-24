@@ -1,4 +1,4 @@
-import { createServer, Factory, Model, Response } from 'miragejs';
+import { ActiveModelSerializer, createServer, Factory, Model, Response } from 'miragejs';
 
 type User = {
   name: string;
@@ -8,6 +8,9 @@ type User = {
 
 export function makeServer() {
   const server = createServer({
+    serializers: {
+      application: ActiveModelSerializer
+    },
     models: {
       user: Model.extend<Partial<User>>({})
     },
@@ -21,7 +24,7 @@ export function makeServer() {
           return `user${i}@yata.dev`
         },
         createdAt() {
-          return new Date().toLocaleDateString()
+          return new Date()
         }
       })
     },
@@ -45,7 +48,12 @@ export function makeServer() {
 
         return new Response(200, { "x-total-count": String(total) }, { users });
       });
-      this.post('/users');
+
+      this.get('/users/:id');
+      this.post('/users', function (schema, request) {
+        console.warn(JSON.parse(request.requestBody));
+        return null
+      });
 
       this.namespace = '';
       this.passthrough();

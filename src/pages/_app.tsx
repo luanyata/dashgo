@@ -1,12 +1,13 @@
 import { ChakraProvider } from "@chakra-ui/react"
 import { AppProps } from "next/app"
-import { QueryClient, QueryClientProvider } from "react-query"
-import {ReactQueryDevtools} from 'react-query/devtools'
+import { QueryClientProvider } from "react-query"
+import { ReactQueryDevtools } from 'react-query/devtools'
 import { SidebarDrawerProvider } from "../contexts/SidebarDrawerContext"
 import { makeServer } from "../services/mirage"
+import { queryClient } from "../services/queryClient"
 import { theme } from "../styles/theme"
 
-const client = new QueryClient()
+
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -15,13 +16,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <QueryClientProvider client={client}>
+    <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
         <SidebarDrawerProvider>
           <Component {...pageProps} />
         </SidebarDrawerProvider>
       </ChakraProvider>
-      <ReactQueryDevtools/>
+      <ReactQueryDevtools />
     </QueryClientProvider>
   )
 }
