@@ -20,16 +20,11 @@ import { Header } from "../../components/Header";
 import { Paginator } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
 import Link from 'next/link'
-import { useQuery } from "react-query";
+import { useUser } from "../../services/hooks/useUsers";
 
 export default function UserList() {
 
-  const { data, isLoading, error } = useQuery('users', async () => {
-    const response = await fetch('http://localhost:3000/api/users')
-    const data = response.json()
-
-    return data;
-  })
+  const { data, isLoading, isFetching, error } = useUser()
 
 
   const isWideVersion = useBreakpointValue({
@@ -48,6 +43,7 @@ export default function UserList() {
           <Flex mb="8" justify="space-between" align="center">
             <Heading size="lg" fontWeight="normal">
               Usuários
+              {!isLoading && isFetching && <Spinner size='sm' color="gray.500" />}
             </Heading>
             <Link href="/users/create" passHref>
               <Button
@@ -82,7 +78,7 @@ export default function UserList() {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {data.users.map(user => (
+                  {data.map(user => (
                     <Tr key={user.id}>
                       <Td px={["2", "4", "6"]}>
                         <Checkbox colorScheme="pink" />

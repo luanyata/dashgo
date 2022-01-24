@@ -3,7 +3,7 @@ import Profile from "./Profile";
 import NotificationNav from './NotificationNav'
 import Search from "./Search";
 import Logo from "./Logo";
-import { useSidebarDrawer } from "../../hooks/SidebarDrawerContext";
+import { useSidebarDrawer } from "../../contexts/SidebarDrawerContext";
 import { RiMenuLine } from "react-icons/ri";
 import { useEffect } from "react";
 
